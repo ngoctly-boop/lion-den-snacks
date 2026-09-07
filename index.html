@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lion Den Snacks</title>
+  <meta name="description" content="Snack signup for Castle Hills Pack 110 Lion Den, 2026–27.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/lion-badge.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img class="badge" src="assets/lion-badge.svg" width="64" height="64" alt="Lion rank badge">
+      <div class="brand">
+        <h1>Lion Den Snacks</h1>
+        <p>Castle Hills Pack 110 · Kindergarten</p>
+      </div>
+    </div>
+    <div class="header-rule" aria-hidden="true"></div>
+  </header>
+  <section class="hero">
+    <div class="hero-photo" role="img" aria-label="Picnic snacks"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-copy">
+      <p class="hero-kicker">LION DEN · 2026–27</p>
+      <h2>Who’s bringing snacks?</h2>
+    </div>
+  </section>
+  <div class="intro">
+    <p>Snacks for the Lion den.</p>
+    <a class="quiet-link" href="https://pack110.trooptrack.com/troops/6ltDIuBAf6pK0KXwFIjJCg/calendar">TroopTrack calendar</a>
+  </div>
+  <main class="wrap">
+    <div class="toolbar">
+      <div class="counts">
+        <span>Open <b id="openCount">0</b></span>
+        <span>Taken <b id="takenCount">0</b></span>
+      </div>
+      <div class="share-bar">
+        <button class="share-btn" id="shareBtn" type="button">Share</button>
+      </div>
+    </div>
+    <div class="filters" role="tablist" aria-label="Filter meetings">
+      <button type="button" data-filter="upcoming" aria-pressed="true">Upcoming</button>
+      <button type="button" data-filter="open" aria-pressed="false">Open</button>
+      <button type="button" data-filter="taken" aria-pressed="false">Taken</button>
+    </div>
+    <section id="meetings" class="meetings" aria-live="polite"></section>
+    <section class="whatsapp">
+      <h2>WhatsApp</h2>
+      <p>We have a WhatsApp group chat for Lion Den families. That’s where we share news, reminders, and answer questions. Ask a Lion Den leader to add you.</p>
+    </section>
+    <section class="contacts">
+      <h2>Lion Den leaders</h2>
+      <p class="person"><strong>Thomas Swinden</strong><span class="role">Lion Den Leader</span><span class="contact-line"><a href="mailto:thomas.swinden@region10.org">thomas.swinden@region10.org</a> · <a href="tel:+12142281623">(214) 228-1623</a></span></p>
+      <p class="person"><strong>Ngoc Kang</strong><span class="role">Lion Den Leader</span><span class="contact-line"><a href="mailto:ngoctly@gmail.com">ngoctly@gmail.com</a> · <a href="tel:+12149091781">(214) 909-1781</a></span></p>
+      <h2 style="margin-top:22px">Pack contacts</h2>
+      <p class="person"><strong>Matt Federle</strong><span class="role">Pack 110 Cubmaster</span><span class="contact-line"><a href="mailto:mfederle@gmail.com">mfederle@gmail.com</a> · <a href="tel:+14696673697">(469) 667-3697</a></span></p>
+      <p class="person"><strong>Katie Elliott</strong><span class="role">Pack 110 Treasurer</span><span class="contact-line"><a href="mailto:katieannelliott@gmail.com">katieannelliott@gmail.com</a> · <a href="tel:+16825008108">(682) 500-8108</a></span></p>
+      <p class="person"><strong>Ryan Pillman</strong><span class="role">Pack 110 Committee Chair</span><span class="contact-line"><a href="mailto:ryan.pillman@outlook.com">ryan.pillman@outlook.com</a> · <a href="tel:+14696828114">(469) 682-8114</a></span></p>
+    </section>
+  </main>
+  <footer class="site-footer">Castle Hills Pack 110 Lion Den · 2026–27</footer>
+  <dialog id="signupDlg">
+    <form class="dlg" id="signupForm">
+      <h3>I’ll bring snacks</h3>
+      <p id="signupWhen" class="meta"></p>
+      <label for="parentName">Parent</label>
+      <input id="parentName" name="parent" type="text" autocomplete="name" required>
+      <label for="scoutName">Scout</label>
+      <input id="scoutName" name="scout" type="text" required>
+      <div class="dlg-actions">
+        <button type="button" class="ghost" data-close>Cancel</button>
+        <button type="submit" class="primary">Sign up</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog id="confirmDlg">
+    <div class="dlg">
+      <h3>You’re on the list</h3>
+      <p id="confirmText" class="confirm-msg"></p>
+      <p>Add it to your calendar:</p>
+      <div class="cal-list">
+        <a id="calGoogle" target="_blank" rel="noopener">Google</a>
+        <a id="calOutlook" target="_blank" rel="noopener">Outlook</a>
+        <a id="calApple">Apple</a>
+        <button type="button" id="calIcs">Download .ics</button>
+      </div>
+      <div class="dlg-actions"><button type="button" class="primary" data-close>Done</button></div>
+    </div>
+  </dialog>
+  <dialog id="shareDlg">
+    <div class="dlg">
+      <h3>Share the snack sheet</h3>
+      <div class="qr-box" id="qrBox"></div>
+      <div class="share-tools">
+        <button type="button" class="primary" id="copyLink">Copy link</button>
+        <button type="button" class="ghost" id="printSheet">Print</button>
+        <button type="button" class="ghost" data-close>Close</button>
+      </div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
