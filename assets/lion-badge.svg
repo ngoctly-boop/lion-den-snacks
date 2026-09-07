@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Lion rank badge">
+  <title>Lion Rank Badge</title>
+  <g transform="translate(100,100)">
+    <polygon points="0,-92 92,0 0,92 -92,0" fill="#1a1208"/>
+    <polygon points="0,-86 86,0 0,86 -86,0" fill="#E8B800"/>
+    <polygon points="0,-80 80,0 0,80 -80,0" fill="#F2C400"/>
+    <g fill="#1a1208" transform="translate(0,-10)">
+      <path d="M0,-38 C6,-28 10,-18 8,-8 C16,-14 22,-8 20,2 C18,10 10,12 4,8 C6,16 8,26 0,34 C-8,26 -6,16 -4,8 C-10,12 -18,10 -20,2 C-22,-8 -16,-14 -8,-8 C-10,-18 -6,-28 0,-38 Z"/>
+      <ellipse cx="0" cy="6" rx="7" ry="5"/>
+      <rect x="-18" y="32" width="36" height="5" rx="1"/>
+      <rect x="-14" y="37" width="28" height="3.5" rx="1"/>
+    </g>
+    <text x="0" y="68" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" letter-spacing="3" fill="#1a1208">LION</text>
+  </g>
+</svg>
