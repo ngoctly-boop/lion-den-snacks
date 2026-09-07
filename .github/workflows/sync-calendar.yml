@@ -1,0 +1,28 @@
+name: Sync TroopTrack calendar
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Update meetings only
+        run: node scripts/sync-calendar.mjs
+      - name: Commit meetings if changed
+        run: |
+          git config user.name "lion-den-snacks-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/meetings.json
+          if git diff --cached --quiet; then
+            echo "No meeting changes"
+          else
+            git commit -m "Sync Lion den meetings from TroopTrack"
+            git push
+          fi
